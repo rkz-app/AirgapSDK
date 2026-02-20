@@ -1,12 +1,10 @@
 package app.rkz.airgapsdk
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
 import app.rkz.airgapsdk.ui.theme.AirgapSDKTheme
 
 class QRPlayerActivity : ComponentActivity() {
@@ -18,13 +16,16 @@ class QRPlayerActivity : ComponentActivity() {
             finish()
             return
         }
+        val title = intent.getStringExtra("title") ?: "QR Player"
         val viewModel = QRPlayerViewModel(data)
         enableEdgeToEdge()
         setContent {
             AirgapSDKTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    QRPlayerScreen(viewModel, "QR Player", onClose = { finish() })
-                }
+                QRPlayerScreen(viewModel, title, onClose = {
+                    val resultIntent = Intent()
+                    setResult(RESULT_CANCELED, resultIntent)
+                    finish()
+                })
             }
         }
     }

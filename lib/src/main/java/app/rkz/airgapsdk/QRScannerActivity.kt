@@ -1,13 +1,10 @@
 package app.rkz.airgapsdk
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
 import app.rkz.airgapsdk.ui.theme.AirgapSDKTheme
 
 class QRScannerActivity : ComponentActivity() {
@@ -18,12 +15,18 @@ class QRScannerActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AirgapSDKTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    QRScannerScreen(viewModel, onDataReceived = {
-                        Toast.makeText(this, "Data received: ${it.size} bytes", Toast.LENGTH_LONG).show()
+
+                    QRScannerScreen(viewModel, onDataReceived = { byteArray ->
+                        val resultIntent = Intent().apply {
+                            putExtra("data", byteArray)  // Your data
+                        }
+                        setResult(RESULT_OK, resultIntent)
                         finish()
-                    }, onClose = { finish() })
-                }
+                    }, onClose = {
+                        val resultIntent = Intent()
+                        setResult(RESULT_CANCELED, resultIntent)
+                        finish()
+                    })
             }
         }
     }
