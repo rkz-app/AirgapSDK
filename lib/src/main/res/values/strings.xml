@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AirgapSDK</string>
+    <string name="title_activity_qrplayer">QRPlayerActivity</string>
+    <string name="title_activity_qrscanner">QRScannerActivity\n</string>
+</resources>
