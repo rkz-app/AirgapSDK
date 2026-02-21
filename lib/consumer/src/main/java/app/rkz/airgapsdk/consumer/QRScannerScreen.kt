@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk
+package app.rkz.airgapsdk.consumer
 
 import android.Manifest
 import android.util.Size

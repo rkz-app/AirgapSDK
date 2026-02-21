@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk
+package app.rkz.airgapsdk.consumer
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -40,7 +40,6 @@ class QRScannerViewModel : ViewModel() {
     private val _progress = MutableStateFlow(0.0)
     val progress: StateFlow<Double> = _progress.asStateFlow()
 
-    // Replace with your real AGDecoder type
     private var decoder: AirgapDecoder? = null
 
     // -----------------------------------------------------------------------

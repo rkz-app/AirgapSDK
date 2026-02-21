@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk
+package app.rkz.airgapsdk.generator
 
 import android.content.Intent
 import android.os.Bundle

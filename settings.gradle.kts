@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "AirgapSDK"
 include(":lib")
+include(":lib:generator")
+include(":lib:consumer")
 include(":example")

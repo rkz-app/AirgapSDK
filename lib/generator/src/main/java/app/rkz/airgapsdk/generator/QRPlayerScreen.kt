@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk
+package app.rkz.airgapsdk.generator
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.Image

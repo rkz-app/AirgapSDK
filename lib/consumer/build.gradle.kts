@@ -1,22 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "app.rkz.airgapskd.example"
+    namespace = "app.rkz.airgapsdk.consumer"
+
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "app.rkz.airgapskd.example"
         minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,14 +35,13 @@ android {
 }
 
 dependencies {
-    implementation(project(":lib:generator"))
-    implementation(project(":lib:consumer"))
+    api(project(":lib"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    testImplementation(libs.junit)
     implementation(libs.bundles.compose)
     implementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.bundles.camerax)
+    implementation(libs.mlkit.barcode.scanning)
+    implementation(libs.accompanist.permissions)
 }
