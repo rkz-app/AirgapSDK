@@ -37,7 +37,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    api(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar"))))
+    api("rkz-app:airgap-release:v0.2.2@aar")
     implementation(libs.material)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

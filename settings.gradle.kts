@@ -16,6 +16,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        ivy {
+            url = uri("https://github.com/rkz-app/airgap/releases/download")
+            patternLayout {
+                artifact("[revision]/[artifact].[ext]")
+            }
+            metadataSources {
+                artifact()
+            }
+        }
     }
 }
 
