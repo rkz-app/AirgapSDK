@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk.consumer
+package app.rkz.airgapsdk.scanner
 
 import android.content.Intent
 import android.os.Bundle

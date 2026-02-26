@@ -1,4 +1,4 @@
-package app.rkz.airgapsdk.consumer
+package app.rkz.airgapsdk.scanner
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

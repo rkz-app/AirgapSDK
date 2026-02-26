@@ -10,6 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AirgapSDK" />
+        android:theme="@style/Theme.AirgapSDK" >
+        <activity
+            android:name="player.QRPlayerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AirgapSDK" />
+        <activity
+            android:name=".QRScannerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AirgapSDK" />
+    </application>
 
 </manifest>
