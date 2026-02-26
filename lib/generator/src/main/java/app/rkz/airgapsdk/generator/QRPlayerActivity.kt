@@ -10,7 +10,6 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import app.rkz.airgapsdk.ui.theme.AirgapSDKTheme
 
 class QRPlayerActivity : ComponentActivity() {
-
     private val viewModel: QRPlayerViewModel by viewModels {
         viewModelFactory {
             initializer {
