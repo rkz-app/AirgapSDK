@@ -13,6 +13,7 @@ compose-bom = "2026.02.00"
 camerax              = "1.5.3"
 mlkit-barcode        = "17.3.0"
 accompanist          = "0.37.3"
+airgap = "0.1.0"
 
 [libraries]
 
@@ -41,7 +42,7 @@ androidx-camera-view      = { module = "androidx.camera:camera-view",      versi
 mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkit-barcode" }
 # mlkit-barcode-scanning-gms = { module = "com.google.android.gms:play-services-mlkit-barcode-scanning", version = "18.3.1" }
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
-
+airgap = {module = "app.rkz:airgap", version.ref = "airgap"}
 
 [bundles]
 # implementation(libs.bundles.camerax)
